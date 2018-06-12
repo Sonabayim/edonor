@@ -19,11 +19,12 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib.auth.views import LoginView, LogoutView
 from profiles.views import RegisterView
-
+from donors.views import DonorListView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', RegisterView.as_view(), name='register'),
+    url(r'^register/$', RegisterView.as_view(), name='register'),
+    url(r'^$', DonorListView.as_view(), name='home'),  
     url(r'^login/$', LoginView.as_view(), name='login'),
     url(r'^logout/$', LogoutView.as_view(), name='logout'),    
     url(r'^/', include('profiles.urls', namespace='profiles')),
