@@ -68,6 +68,12 @@ Fb- qan.ver
 
 TƏŞƏKKÜRLƏR.</p>
 		</div>
+		{% if user.is_authenticated %}
+		<div class='col-sm-6 col-sm-offset-3 text-center'>
+		<p> Qeydiyyatdan kecdiyinize gore teshekkurler :) </p>
+			
+		</div>
+			{% else %}
 		<div class='col-sm-6 col-sm-offset-3 text-center'>
 			<h1>Register</h1>
 			<hr/>
@@ -78,9 +84,10 @@ TƏŞƏKKÜRLƏR.</p>
 			<input type="submit" value="Register" />
 			<input type="hidden" name="next" value="{{ next }}" />
 			</form>
-			<p>Did you need to <a href='{% url "login" %}'>Login</a>?
+			<!-- <p>Did you need to <a href='{% url "login" %}'>Login</a>? -->
 			</div>	
-
+			
+			{% endif %}
 
 			</div>
 		</div>

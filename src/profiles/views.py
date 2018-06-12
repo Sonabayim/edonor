@@ -14,25 +14,13 @@ User = get_user_model()
 class RegisterView(CreateView):
     form_class = RegisterForm
     template_name = 'registration.html'
-    success_url = 'index.html'
+    success_url = '/'
     # success_message = "Your account was created successfully. Please check your email."
 
     def dispatch(self, *args, **kwargs):
         # if self.request.user.is_authenticated():
         #     return redirect("/logout")
         return super(RegisterView, self).dispatch(*args, **kwargs)
-
-# class LoginView(CreateView):
-#     form_class = LoginForm
-#     template_name = 'login.html'
-#     success_url = 'index.html'
-#     # success_message = "Your account was created successfully. Please check your email."
-
-#     def dispatch(self, *args, **kwargs):
-#         # if self.request.user.is_authenticated():
-#         #     return redirect("/logout")
-#         return super(LoginView, self).dispatch(*args, **kwargs)
-
 
 
 

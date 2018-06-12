@@ -9,8 +9,20 @@ from .choices import *
 
 class Profile(models.Model):
 	user = models.OneToOneField(settings.AUTH_USER_MODEL)
-	# blood_group  = models.ChoiceField(label='Qan qrupunuz',choices=BLOOD_GROUP, required=True)
+	blood_group  = models.IntegerField(choices=BLOOD_GROUP, blank=False, null=True)
 	gender	= models.IntegerField(choices=GENDER_CHOICES,default=1, null=True)
+	timestamp     	= models.DateTimeField(auto_now_add=True)
+	updated       	= models.DateTimeField(auto_now=True)
+	illness  = models.IntegerField(
+		 choices=ILLNESS_CHOICES, blank=False, null=True)
+
+	illness1  = models.IntegerField(choices=ILLNESS_CHOICES, blank=False, null=True)
+
+	illness2  = models.IntegerField(
+		 choices=ILLNESS_CHOICES, blank=False, null=True)
+
+	# weight = models.IntegerField(blank=False, null=True)
+	# height = models.IntegerField(blank=False, null=True)
 
 
 
